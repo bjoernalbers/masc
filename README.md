@@ -20,7 +20,8 @@ werden soll:
 2. Entpacke die zuvor geladene exe-Datei mit der Keka-App.
 3. Installiere die darin enthaltene jar-Datei per Doppelklick in das
    Standardverzeichnis `/Applications`.
-4. Klone dieses Repository mit git und wechsele in das Verzeichnis.
+4. Klone dieses Repository mit git und wechsele in das Verzeichnis:
+   `git clone https://github.com/bjoernalbers/masc && cd masc`
 5. Führe das Ansible-Playbook aus: `ansible-playbook site.yml`.
 
 Anschließend sollte im Unterverzeichnis eine pkg-Datei liegen, die du auf einem
