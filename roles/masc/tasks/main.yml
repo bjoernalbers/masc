@@ -1,0 +1,77 @@
+---
+- name: read current version
+  shell: ls -1d "/Applications/MaSc SE"/MaScSE/v* | egrep -o '\d(\.\d)+' | sort | tail -1
+  register: list_masc_version  
+
+- name: set current version as fact
+  set_fact:
+    masc_version: "{{ list_masc_version.stdout }}"
+
+- name: clean up build environment
+  file:
+    path: "{{ masc_app_base_dir }}"
+    state: absent
+
+- name: create app directories
+  file:
+    path: "{{ masc_app_base_dir }}/{{ item }}"
+    state: directory
+  with_items:
+    - Contents/Resources
+    - Contents/MacOS
+
+- name: copy masc
+  command: cp -r "{{ masc_src_dir }}" "{{ masc_app_masc_dir }}"
+
+- name: patch starter files
+  copy:
+    src: "{{ item | basename }}"
+    dest: "{{ item }}"
+  with_items:
+    - "{{ masc_starter_command }}"
+    - "{{ masc_starter_properties }}"
+
+- name: copy java runtime environment
+  command: cp -r "{{ masc_jre_dir }}" "{{ masc_app_jre_dir }}"
+
+- name: create icon
+  copy:
+    src: "{{ masc_icon | basename }}"
+    dest: "{{ masc_icon }}"
+
+- name: create plist
+  template:
+    src: "{{ masc_plist | basename }}.j2"
+    dest: "{{ masc_plist }}"
+
+- name: create script
+  copy:
+    src: "{{ masc_script | basename }}"
+    dest: "{{ masc_script }}"
+    mode: 0755
+
+- name: create package scripts directory
+  file:
+    path: "{{ masc_pkg_scripts_dir }}"
+    state: directory
+
+- name: create package preinstall script
+  copy:
+    src: "preinstall"
+    dest: "{{ masc_pkg_scripts_dir }}/preinstall"
+    mode: 0755
+
+- name: create package directory
+  file:
+    path: "{{ masc_pkg_dir }}"
+    state: directory
+
+- name: create package
+  command: >
+    pkgbuild
+    --root "{{ masc_build_root }}"
+    --identifier "{{ masc_identifier }}"
+    --version "{{ masc_version }}"
+    --ownership recommended
+    --scripts "{{ masc_pkg_scripts_dir }}"
+    "{{ masc_pkg_dir }}/masc-{{ masc_version }}.pkg"

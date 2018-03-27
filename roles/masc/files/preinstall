@@ -1,0 +1,7 @@
+#!/bin/sh
+
+pkill -fi 'java.*masc'
+rm -rf "/Applications/MaSc.app"
+rm -rf "${HOME}/MaSc.app"
+rm -rf "${HOME}/Applications/MaSc.app"
+rm -rf "${HOME}/KV-IT"

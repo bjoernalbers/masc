@@ -1,0 +1,1 @@
+./jre/bin/java -jar KV-IT-Starter-client-1.4.0.1.jar --spring.config.location=file:MaScSE/starter.properties
