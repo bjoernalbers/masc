@@ -1,14 +1,14 @@
 # Ansible Role: MaSc
 
 Mit dieser Ansible Role lässt sich aus der [MaSc-Software](http://kv-it-gmbh.de/masc/)
-eine App für macOS bauen (getestet mit MaSc Version 5.1.2).
+eine App für macOS bauen (getestet mit MaSc Version 5.3.1).
 
 ## Voraussetzungen
 
 Folgende Software muss auf dem Mac installiert sein, auf dem die App gebaut
 werden soll:
 
-- ein Java-Runtime-Environment in Version 8
+- ein Java-Runtime-Environment (mindestens Java-Version "1.8.0_172")
 - die App [Keka](http://www.kekaosx.com/de/)
 - Ansible, z.B. über [Homebrew](https://brew.sh/index_de) mit dem Befehl `brew install ansible`
 - git (z.B. über XCode)
