@@ -1,7 +1,8 @@
-#!/bin/sh
+#!/bin/bash
+
+export PATH='/usr/bin:/bin:/usr/sbin:/sbin'
+
+VOLUME="$3"
 
 pkill -fi 'java.*masc'
-rm -rf "/Applications/MaSc.app"
-rm -rf "${HOME}/MaSc.app"
-rm -rf "${HOME}/Applications/MaSc.app"
-rm -rf "${HOME}/KV-IT"
+rm -rf "${VOLUME:?}/Applications/MaSc.app"
