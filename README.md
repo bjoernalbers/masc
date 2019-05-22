@@ -1,7 +1,7 @@
 # Ansible Role: MaSc
 
 Mit dieser Ansible Role lässt sich aus der [MaSc-Software](http://kv-it-gmbh.de/masc/)
-eine App für macOS bauen (getestet mit MaSc Version 5.4).
+eine App für macOS bauen (getestet mit MaSc Version 5.5).
 
 ## Voraussetzungen
 
@@ -17,7 +17,8 @@ werden soll:
 
 1. Lade dir die MaSc-Software von der [offiziellen
    Webseite](http://kv-it-gmbh.de) aus dem Kundenbereich runter.
-2. Entpacke die zuvor geladene exe-Datei mit der Keka-App.
+2. Entpacke die zuvor geladene exe-Datei mit der Keka-App (nicht mehr nötig
+   mit MaSc-Version 5.5, da diese als .zip statt .exe veröffentlicht wurde).
 3. Installiere die darin enthaltene jar-Datei per Doppelklick in das
    Standardverzeichnis `/Applications`.
 4. Klone dieses Repository mit git und wechsele in das Verzeichnis:
