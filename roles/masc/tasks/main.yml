@@ -29,7 +29,6 @@
     dest: "{{ item }}"
     mode: 0644
   with_items:
-    - "{{ masc_starter }}"
     - "{{ masc_starter_command }}"
     - "{{ masc_starter_properties }}"
 
