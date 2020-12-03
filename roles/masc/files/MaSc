@@ -4,7 +4,7 @@ require 'pathname'
 MASC      = Pathname.new('~/KV-IT').expand_path
 RESOURCES = Pathname.new(__FILE__).expand_path.join('../../Resources')
 MASC_CMD  = 'KV-IT-Starter#MaScSE.data'
-system 'rsync', '--recursive',
+system 'rsync', '--recursive', '--update',
   (RESOURCES + MASC.basename).to_s, MASC.dirname.to_s
 # Execute the start cmd within MaSc directory.
 Dir.chdir MASC do
