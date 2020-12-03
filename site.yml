@@ -4,4 +4,4 @@
   hosts: localhost
   roles:
     - role: masc
-      masc_jre_dir: '/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jre/Contents/Home'
+      masc_jre_dir: '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home'
