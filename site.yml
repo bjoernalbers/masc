@@ -3,4 +3,5 @@
 - name: build masc
   hosts: localhost
   roles:
-    - masc
+    - role: masc
+      masc_jre_dir: '/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jre/Contents/Home'

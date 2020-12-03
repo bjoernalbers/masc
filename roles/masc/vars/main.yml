@@ -1,5 +1,4 @@
 ---
-masc_jre_dir:            '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home'
 masc_src_dir:            '/Applications/MaSc SE'
 masc_build_root:         'tmp/ROOT'
 masc_app_base_dir:       '{{ masc_build_root }}/Applications/MaSc.app'
