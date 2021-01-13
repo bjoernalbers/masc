@@ -32,8 +32,13 @@
     - "{{ masc_starter_command }}"
     - "{{ masc_starter_properties }}"
 
+- name: create java basedir
+  file:
+    path: "{{ masc_app_jre_dir }}"
+    state: directory
+
 - name: copy java runtime environment
-  command: cp -r "{{ masc_jre_dir }}" "{{ masc_app_jre_dir }}"
+  command: cp -r "{{ masc_jre_dir }}/" "{{ masc_app_jre_dir }}"
 
 - name: create icon
   copy:
