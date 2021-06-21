@@ -40,6 +40,11 @@
 - name: copy java runtime environment
   command: cp -r "{{ masc_jre_dir }}/" "{{ masc_app_jre_dir }}"
 
+- name: copy java jaxm config
+  copy:
+    src: jaxm.properties
+    dest: "{{ masc_app_jre_dir }}/conf"
+
 - name: create icon
   copy:
     src: "{{ masc_icon | basename }}"
