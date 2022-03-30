@@ -1,1 +1,1 @@
-./java/11.0.9/64/bin/java -jar KV-IT-Starter-client-1.7.15.jar --spring.config.additional-location=file:"MaScSE/starter.properties"
+./java/11.0.9/64/bin/java -jar KV-IT-Starter-client-1.7.18.jar --spring.config.additional-location=file:"MaScSE/starter.properties"

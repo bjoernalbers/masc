@@ -1,7 +1,7 @@
 # Ansible Role: MaSc
 
 Mit dieser Ansible Role lässt sich aus der [MaSc-Software](http://kv-it-gmbh.de/masc/)
-eine App für macOS bauen (getestet mit MaSc Version 7.0).
+eine App für macOS bauen (getestet mit MaSc Version 7.1.1).
 
 ## Voraussetzungen
 
