@@ -4,4 +4,4 @@
   hosts: localhost
   roles:
     - role: masc
-      masc_jre_dir: '/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jre/Contents/Home'
+      masc_jre_dir: 'java/x86_64/jdk-17.0.3+7-jre/Contents/Home'
